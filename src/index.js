@@ -1,7 +1,8 @@
 const cervezas = require('./cervezas.json')
-const uniqueRandomArray = requeire('.unique-random-array')
-
+const uniqueRandomArray = require('unique-random-array')
+var _ = require('lodash')
 module.exports = {
-  todas: cervezas
-  alazar: uniqueRandomArray(cervezas)
+  todas: cervezas,
+  ordenadas: _.sortBy(cervezas, ['nombre']),
+  alAzar: uniqueRandomArray(cervezas)
 }
